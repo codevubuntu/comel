@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+<title>Comel-Saisie</title>
+<meta name="generator" content="Geany 1.27" />
+        <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+	<nav> <a href="." > Liste des produits </a> </nav>
+	
+	<div>
+		<h1> Ajouter un produit </h1>
+		{% if sauvegarde == True %}
+			<h2> {{ nouvProd.nom }} est enregistré. </h2>
+		{% endif %}
+		<form method="post" enctype="multipart/form-data" action="{% url 'saisir' %}">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<input type="submit" value="OK"/>
+		</form>
+	</div>
+</body>
+
+</html>

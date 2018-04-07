@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title>Ecomm</title>
+<link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+	<nav> <a href="{% url 'saisir' %} " > Ajouter des produits </a> </nav>
+	<div>
+		<h1>Liste des Produits</h1>
+		{% for produit in listProd %}
+		<h3>{{ produit.nom }}</h3>
+		<p>
+			<img src="{{ produit.photo.url }}"/>
+		</p>
+		<h4>Prix ttc : {{ produit.p_ttc }} DH</h4>
+		<hr>
+		{% endfor %}
+		
+	</div>
+</body>
+
+</html>
